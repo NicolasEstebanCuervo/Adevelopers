@@ -1,7 +1,8 @@
 import styled from "@emotion/styled";
 import Portada from "../../Imagenes/Portada.jpg";
+import * as Colores from "../Colores"
 
-const Opiniones = () => {
+const Contactanos = () => {
   return (
     <SeccionContacto>
           <TituloContacto>Nuestros servicios</TituloContacto>
@@ -67,10 +68,10 @@ const Opiniones = () => {
   );
 };
 
-export default Opiniones;
+export default Contactanos;
 
 const SeccionContacto = styled.section`
-  background: #D2DAF6;
+  background: ${Colores.colorSecundario};
   padding: 50px  0 0;
   display: flex;
   flex-direction: column;
@@ -79,6 +80,7 @@ const SeccionContacto = styled.section`
 `;
 
 const TituloContacto = styled.h1`
+  color: ${Colores.colorBlanco};
   border-radius: 10px;
   padding: 0.8% 2vw;
   font-size: 50px;
@@ -114,20 +116,20 @@ const ContenedorTextos = styled.div`
 `;
 
 const TituloContenedorPrincipal = styled.h1`
-  color: #fff;
+  color: ${Colores.colorBlanco};
   padding-left: 10px;
-  border-left: 5px solid #fff;
+  border-left: 5px solid ${Colores.colorBlanco};
 `;
 
 const ParrafoContenedorPrincipal = styled.p`
-  color: #fff;
+  color: ${Colores.colorBlanco};
   max-width: 80%;
   text-align: left;
 `;
 
 const BotonContenedorPrincipal = styled.button`
-  color: #fff;
-  background: #444444;
+  color: ${Colores.colorBlanco};
+  background: ${Colores.colorBoton};
   text-align: center;
   text-align: left;
   padding: 10px 20px;
@@ -140,7 +142,7 @@ const BotonContenedorPrincipal = styled.button`
   transition: background 0.3s ease;
 
   &:hover {
-    background: #202020;
+    background: ${Colores.colorHoverBoton};
   }
 
 `;
@@ -150,7 +152,7 @@ const ContenedorRedes = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #161616;
+  background: ${Colores.colorCuaternario};
   height: 100%;
   padding: 50px 0;
 `;
@@ -158,7 +160,7 @@ const ContenedorRedes = styled.div`
 const TituloRedes = styled.h1`
   padding-left:50px;
   font-weight: bold;
-  color:#fff;
+  color:${Colores.colorBlanco};
 `;
 
 const RedesContainer = styled.div`
@@ -178,21 +180,21 @@ const RedSocial = styled.div`
 
 const TituloRed = styled.h1`
   font-size: 25px;
-  color: #E7E7E7;
+  color: ${Colores.colorSemiBlanco};
 `
 
 const ParrafoRed = styled.p`
   font-size: 15px;
-  color: #E7E7E7;
+  color: ${Colores.colorSemiBlanco};
 `
 
 const Icono = styled.i`
   font-size: 40px;
-  color: #E7E7E7;
+  color: ${Colores.colorSemiBlanco};
   margin-right: 10px;
 `;
 
 const ContenedorTextoRed = styled.div`
-  color: #fff;
+  color: ${Colores.colorBlanco};
 `;
 

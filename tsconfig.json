@@ -23,5 +23,5 @@
   },
   "include": [
     "src"
-, "src/Componentes/Nav/Navegacion.tsx"  ]
+, "src/Componentes/Header/Navegacion.tsx"  ]
 }

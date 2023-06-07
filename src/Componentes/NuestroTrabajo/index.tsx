@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
+import * as Colores from "../Colores"
 
-const Galeria = () => {
+const NuestroTrabajo = () => {
   return (
-    <ContenedorGaleria>
+    <ContenedorNuestroTrabajo>
       <TituloNuestroProducto>Nuestro trabajo</TituloNuestroProducto>
-      <SubContenedorGaleria>
+      <SubContenedorNuestroTrabajo>
         <Imagenes src={require("../../Imagenes/Img1.jpg")} />
         <Imagenes src={require("../../Imagenes/Img2.jpg")} />
         <Imagenes src={require("../../Imagenes/Img3.jpg")} />
@@ -13,23 +14,24 @@ const Galeria = () => {
         <Imagenes src={require("../../Imagenes/Img6.jpg")} />
         <Imagenes src={require("../../Imagenes/Img7.jpg")} />
         <Imagenes src={require("../../Imagenes/Img8.jpg")} />
-      </SubContenedorGaleria>
-    </ContenedorGaleria>
+      </SubContenedorNuestroTrabajo>
+    </ContenedorNuestroTrabajo>
   );
 };
 
-export default Galeria;
+export default NuestroTrabajo;
 
-const ContenedorGaleria = styled.div`
+const ContenedorNuestroTrabajo = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 50px 0 100px;
   align-items: center;
-  background: #E6E4FC;
+  background: ${Colores.colorPrimario};
 `;
 
 const TituloNuestroProducto = styled.h1`
+  color: ${Colores.colorBlanco};
   border-radius: 10px;
   padding: 0.8% 2vw;
   font-size: 50px;
@@ -42,7 +44,7 @@ const TituloNuestroProducto = styled.h1`
   }
 `;
 
-const SubContenedorGaleria = styled.div`
+const SubContenedorNuestroTrabajo = styled.div`
   display: flex;
   height: 430px;
   width: 70%;

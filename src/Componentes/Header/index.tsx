@@ -4,8 +4,9 @@ import { Navbar, Nav } from "react-bootstrap";
 import { css } from '@emotion/react';
 import styled from '@emotion/styled'
 import Portada from "../../Imagenes/Portada.jpg"
+import * as Colores from "../Colores"
 
-const Navegacion = () => {
+const HeaderComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -42,7 +43,7 @@ const Navegacion = () => {
   );
 };
 
-export default Navegacion;
+export default HeaderComponent;
 
 const Header = styled.header`
   padding: 20px 0 100px;
@@ -97,25 +98,16 @@ const links = css`
   border-bottom: 2px solid transparent; 
   transition: border-color 0.5s ease;
   padding-bottom: 10px;
-  color: #fff;
+  color: ${Colores.colorBlanco};
   font-size: 17px !important;
   padding: 2%;
   
   &:hover {
-    color: #9E98DF;
-    border-color: #9E98DF;
+    color: ${Colores.colorLinks};
   }
 
   &.active {
-    color: #9E98DF !important;
-  }
-
-  @media (max-width: 1200px) {
-    border: none;
-    &:hover{
-    background-color: #9E98DF;
-    color: #312f2f !important;
-    }
+    color: ${Colores.colorLinks} !important;
   }
 
   @media (max-width: 1200px) {
@@ -147,7 +139,7 @@ const SeccionTextosHeader = styled.section`
 
 const TituloHeader = styled.h1`
   font-size: 40px;
-  color: #fff;
+  color: ${Colores.colorBlanco};
 
   @media (max-width: 1000px) {
     font-size:4vw;
@@ -164,7 +156,7 @@ const TituloHeader = styled.h1`
 
 const SubtituloHeader = styled.h1`
   font-size: 25px;
-  color: #fff;
+  color: ${Colores.colorBlanco};
   font-weight: 300;
 
   @media (max-width: 1000px) {
@@ -193,5 +185,5 @@ const Onda = styled.svg`
   width: 100%;
 ` 
 const Path = styled.path`
-  stroke: none; fill: #E6E4FC;
+  stroke: none; fill: ${Colores.colorPrimario};
 `

@@ -1,28 +1,26 @@
 import React from 'react';
-import { useViewportScroll, motion } from 'framer-motion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Navegacion from './Componentes/Nav';
-import NuestroProducto from './Componentes/NuestroProducto';
-import NuestrosProyectos from './Componentes/NuestrosProyectos';
-import Opiniones from './Componentes/Opiniones';
+import HeaderComponent from './Componentes/Header';
+import SobreNosotros from './Componentes/SobreNosotros';
+import NuestrosProyectos from './Componentes/NuestrosServicios';
+import NuestroTrabajo from './Componentes/NuestroTrabajo';
+import Contactanos from './Componentes/Contactanos';
 import Footer from './Componentes/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import "bootstrap-icons/font/bootstrap-icons.css";
-import Galeria from './Componentes/Galeria';
-
 
 const App  = () => {
 
   return (
     <div className="App">
-      <Navegacion />
-      <NuestroProducto />
+      <HeaderComponent />
+      <SobreNosotros />
       <NuestrosProyectos />
-      <Galeria />
-      <Opiniones />
+      <NuestroTrabajo />
+      <Contactanos />
       <Footer />
     </div>
   );
