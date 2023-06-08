@@ -161,6 +161,9 @@ const TituloRedes = styled.h1`
   padding-left:50px;
   font-weight: bold;
   color:${Colores.colorBlanco};
+  @media (max-width: 600px) {
+    font-size: 8vw;
+  }
 `;
 
 const RedesContainer = styled.div`

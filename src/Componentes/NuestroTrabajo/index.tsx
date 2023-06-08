@@ -40,7 +40,7 @@ const TituloNuestroProducto = styled.h1`
   margin-bottom: 70px;
 
   @media (max-width: 600px) {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 `;
 

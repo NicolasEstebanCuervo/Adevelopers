@@ -176,7 +176,7 @@ const TituloServicios = styled.h1`
   color: ${Colores.colorBlanco};
 
   @media (max-width: 600px) {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 `;
 
@@ -250,6 +250,7 @@ const ImagenHover = styled.img`
 
 const TextoHover = styled.h1`
   font-size: 17px;
+  color: ${Colores.colorBlanco};
 
   @media (max-width: 1000px) {
     font-size: 3vw;

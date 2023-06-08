@@ -66,9 +66,7 @@ const ContenedorSecciones = styled.div`
   }
 `;
 
-const ContenedorSeccion = styled.div`
-  margin: 0 auto;
-`;
+const ContenedorSeccion = styled.div``;
 
 const TituloSeccionFooter = styled.h1`
   font-size: 25px;

@@ -84,7 +84,7 @@ const TituloSobreNosotros = styled.h1`
   font-weight: bold;
 
   @media (max-width: 600px) {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 `;
 
@@ -136,15 +136,15 @@ const TituloTextoSobreNosotros = styled.h1`
   font-weight: bold;
 
   @media (max-width: 1000px) {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   @media (max-width: 700px) {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 
   @media (max-width: 400px) {
-    font-size: 10vw;
+    font-size: 6vw;
   }
 `;
 
