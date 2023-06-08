@@ -89,13 +89,16 @@ const TituloContacto = styled.h1`
   margin-bottom: 70px;
 
   @media (max-width: 600px) {
-    font-size:10vw;
+    font-size: 8vw;
   }
 `;
 
 const SubDivContacto = styled.section`
   display: flex;
-  align-items: stretch;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const ContenedorPrincipal = styled.div`
@@ -104,11 +107,20 @@ const ContenedorPrincipal = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, hsla(000, 5%, 10%, 0.8) 0%, hsla(0, 0%, 0%, 0.7)),
+  background: linear-gradient(
+      to right,
+      hsla(000, 5%, 10%, 0.8) 0%,
+      hsla(0, 0%, 0%, 0.7)
+    ),
     url(${Portada});
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+
+  @media (max-width: 800px) {
+    height: 40vh; 
+    flex: none;
+  }
 `;
 
 const ContenedorTextos = styled.div`
@@ -119,12 +131,36 @@ const TituloContenedorPrincipal = styled.h1`
   color: ${Colores.colorBlanco};
   padding-left: 10px;
   border-left: 5px solid ${Colores.colorBlanco};
+
+  @media (max-width: 1000px) {
+    font-size: 4vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 6vw;
+  }
 `;
 
 const ParrafoContenedorPrincipal = styled.p`
   color: ${Colores.colorBlanco};
   max-width: 80%;
   text-align: left;
+
+  @media (max-width: 1000px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 3vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 5vw;
+  }
 `;
 
 const BotonContenedorPrincipal = styled.button`
@@ -161,8 +197,16 @@ const TituloRedes = styled.h1`
   padding-left:50px;
   font-weight: bold;
   color:${Colores.colorBlanco};
-  @media (max-width: 600px) {
-    font-size: 8vw;
+  @media (max-width: 1000px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 6vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 7vw;
   }
 `;
 
@@ -172,23 +216,59 @@ const RedesContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 20px;
-  padding: 0 50px;
+  padding: 0 10%;
 `;
 
 const RedSocial = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+
+  @media (max-width: 1000px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 6vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 7vw;
+  }
 `;
 
 const TituloRed = styled.h1`
   font-size: 25px;
   color: ${Colores.colorSemiBlanco};
+
+  @media (max-width: 1000px) {
+    font-size: 4vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 6vw;
+  }
 `
 
 const ParrafoRed = styled.p`
   font-size: 15px;
   color: ${Colores.colorSemiBlanco};
+
+  @media (max-width: 1000px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 3vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 5vw;
+  }
 `
 
 const Icono = styled.i`
