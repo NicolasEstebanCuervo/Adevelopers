@@ -73,8 +73,16 @@ const TituloSeccionFooter = styled.h1`
   margin-bottom: 10px;
   color: ${Colores.colorBlanco};
 
-  @media (max-width: 300px) {
-    font-size: 10vw;
+  @media (max-width: 1000px) {
+    font-size: 4vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 5vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 6vw;
   }
 `;
 
@@ -86,10 +94,6 @@ const ListaFooter = styled.ul`
 const LiFooter = styled.li`
   list-style: none;
   display: flex;
-
-  @media (max-width: 300px) {
-    font-size: 8vw;
-  }
 `;
 
 const LinkFooter = styled.a`
@@ -98,6 +102,18 @@ const LinkFooter = styled.a`
   text-decoration-line: none;
   font-size: 17px;
   transition: color 0.3s;
+
+  @media (max-width: 1000px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 3vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 5vw;
+  }
 
   &:hover {
     color: ${Colores.colorCuaternario};

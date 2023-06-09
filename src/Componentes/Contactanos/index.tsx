@@ -181,6 +181,18 @@ const BotonContenedorPrincipal = styled.button`
     background: ${Colores.colorHoverBoton};
   }
 
+  @media (max-width: 1000px) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 3vw;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 4vw;
+  }
+
 `;
 
 const ContenedorRedes = styled.div`
@@ -222,19 +234,6 @@ const RedesContainer = styled.div`
 const RedSocial = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-
-  @media (max-width: 1000px) {
-    font-size: 5vw;
-  }
-
-  @media (max-width: 700px) {
-    font-size: 6vw;
-  }
-
-  @media (max-width: 400px) {
-    font-size: 7vw;
-  }
 `;
 
 const TituloRed = styled.h1`
@@ -274,7 +273,21 @@ const ParrafoRed = styled.p`
 const Icono = styled.i`
   font-size: 40px;
   color: ${Colores.colorSemiBlanco};
-  margin-right: 10px;
+  margin-right: 80PX;
+
+  @media (max-width: 1000px) {
+    font-size: 7vw;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 10vw;
+    margin-right: 50px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 12vw;
+    margin-right: 20px;
+  }
 `;
 
 const ContenedorTextoRed = styled.div`
