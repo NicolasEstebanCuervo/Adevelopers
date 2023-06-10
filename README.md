@@ -1,7 +1,7 @@
 <div id="Header" align="center">
 
-   <img src="https://media.giphy.com/media/2TFn4myx9Ocd6PYCFf/giphy.gif" width="300">   
-   <h1 align="center">Malony 🛒 - En progreso </h1>
+   <img src="https://media.giphy.com/media/xT5LMWNOjGqJzUfyve/giphy.gif" width="300">   
+   <h1 align="center">Adevelopers 📊 - En progreso </h1>
 
 </div>
 
@@ -45,4 +45,6 @@ En caso tal de que te interese alguna de las librerias usadas aca te dejo una li
 - Emotion Css : npm install@emotion/css.
 - Emotion React : npm install @emotion/react.
 - Emotion Styled : npm install @emotion/styled.
+- React Intersection Observer : npm install react-intersection-observer.
+- Framer Motion : npm install framer-motion.
 
