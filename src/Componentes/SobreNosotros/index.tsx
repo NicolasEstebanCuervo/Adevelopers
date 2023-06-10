@@ -30,7 +30,7 @@ const SobreNosotros = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
           variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 5 }}
+          transition={{ type: "spring", bounce: 0.25, duration: 8 }}
         >
           <img src={Ilustracion} alt="Ilustración" />
         </ContenedorAnimacionImagen>
