@@ -1,19 +1,57 @@
 import styled from "@emotion/styled";
-import * as Colores from "../Colores"
+import { motion } from "framer-motion";
+import * as Colores from "../Colores";
+import { useInView } from "react-intersection-observer";
 
 const NuestroTrabajo = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { scale: 0 },
+    visible: { scale: 1 },
+  };
+
   return (
-    <ContenedorNuestroTrabajo>
+    <ContenedorNuestroTrabajo ref={ref}>
       <TituloNuestroProducto>Nuestro trabajo</TituloNuestroProducto>
-      <SubContenedorNuestroTrabajo>
-        <Imagenes src={require("../../Imagenes/Img1.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img2.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img3.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img4.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img5.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img6.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img7.jpg")} />
-        <Imagenes src={require("../../Imagenes/Img8.jpg")} />
+      <SubContenedorNuestroTrabajo
+        variants={container}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <Imagenes
+          src={require("../../Imagenes/Img1.jpg")}
+          variants={item}
+        />
+        <Imagenes
+          src={require("../../Imagenes/Img2.jpg")}
+          variants={item}
+        />
+        <Imagenes
+          src={require("../../Imagenes/Img3.jpg")}
+          variants={item}
+        />
+        <Imagenes
+          src={require("../../Imagenes/Img4.jpg")}
+          variants={item}
+        />
+        <Imagenes
+          src={require("../../Imagenes/Img5.jpg")}
+          variants={item}
+        />
       </SubContenedorNuestroTrabajo>
     </ContenedorNuestroTrabajo>
   );
@@ -44,20 +82,20 @@ const TituloNuestroProducto = styled.h1`
   }
 `;
 
-const SubContenedorNuestroTrabajo = styled.div`
+const SubContenedorNuestroTrabajo = styled(motion.div)`
   display: flex;
   height: 430px;
   width: 70%;
 `;
 
-const Imagenes = styled.img`
+const Imagenes = styled(motion.img)`
   position: relative;
   max-width: 250px;
   width: 0;
   height: auto;
   flex-grow: 1;
   object-fit: cover;
-  transition: width 3s ease; 
+  transition: width 3s ease;
 
   &:hover {
     cursor: pointer;

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import styled from "@emotion/styled/macro";
@@ -18,149 +19,76 @@ const NuestrosServicios = () => {
     threshold: 0.1,
   });
 
-  const variants = {
-    visible: { opacity: 1, y: 0 },
-    hidden: { opacity: 0, y: 1000 },
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
+
+  const handleHover = (index: number) => {
+    setHoverIndex(index);
+  };
+
+  const handleHoverEnd = () => {
+    setHoverIndex(null);
+  };
+
+  const servicios = [
+    { imagen: Imagen1, nombre: "Servicio 1" },
+    { imagen: Imagen2, nombre: "Servicio 2" },
+    { imagen: Imagen3, nombre: "Servicio 3" },
+    { imagen: Imagen4, nombre: "Servicio 4" },
+    { imagen: Imagen5, nombre: "Servicio 5" },
+    { imagen: Imagen6, nombre: "Servicio 6" },
+    { imagen: Imagen7, nombre: "Servicio 7" },
+    { imagen: Imagen8, nombre: "Servicio 8" },
+  ];
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delay: 0.5,
+        staggerChildren: 1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { scale: 0 },
+    visible: { scale: 1 },
   };
 
   return (
     <SeccionServicios ref={ref}>
-      <TituloServicios>Nuestros servicios</TituloServicios>
-      <ContenedorServicios className="container">
-        {/* Servicio 1 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 5 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen1} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 1</TextoHover>
-            </HoverServicio>
+    <TituloServicios>Nuestros servicios</TituloServicios>
+    <ContenedorServicios
+      variants={container}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+    >
+      {servicios.map((servicio, index: number) => (
+        <motion.div key={index} variants={item}>
+          <ContenedorServicio
+            onMouseEnter={() => handleHover(index)}
+            onMouseLeave={handleHoverEnd}
+          >
+            <ImagenServicio src={servicio.imagen} />
+            {hoverIndex === index && (
+              <HoverServicio>
+                <ImagenHover src={Hover} />
+                <TextoHover>{servicio.nombre}</TextoHover>
+              </HoverServicio>
+            )}
           </ContenedorServicio>
         </motion.div>
+      ))}
+    </ContenedorServicios>
+  </SeccionServicios>
+);
 
-        {/* Servicio 2 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 4 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen2} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 2</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 3 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 5 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen3} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 3</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 4 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 4 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen4} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 4</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 5 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 5 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen5} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 5</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 6 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 4 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen6} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 6</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 7 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 5 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen7} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 7</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-
-        {/* Servicio 8 */}
-        <motion.div
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          variants={variants}
-          transition={{ type: "spring", bounce: 0.25, duration: 4 }}
-        >
-          <ContenedorServicio>
-            <ImagenServicio src={Imagen8} />
-            <HoverServicio className="hover-galeria">
-              <ImagenHover src={Hover} />
-              <TextoHover>Servicio 8</TextoHover>
-            </HoverServicio>
-          </ContenedorServicio>
-        </motion.div>
-      </ContenedorServicios>
-    </SeccionServicios>
-  );
 };
 
 export default NuestrosServicios;
 
+// Estilos CSS
 const SeccionServicios = styled.div`
   background: ${Colores.colorSecundario};
   padding: 50px 0 100px;
@@ -180,7 +108,7 @@ const TituloServicios = styled.h1`
   }
 `;
 
-const ContenedorServicios = styled.div`
+const ContenedorServicios = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(4, 220px);
   gap: 10px;
@@ -223,17 +151,11 @@ const HoverServicio = styled.div`
   width: 100%;
   height: 100%;
   top: 0;
-  transform: scale(0);
   background: hsla(210, 91%, 27%, 0.7);
-  transition: transform 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  ${ContenedorServicio}:hover & {
-    transform: scale(1);
-  }
 `;
 
 const ImagenHover = styled.img`

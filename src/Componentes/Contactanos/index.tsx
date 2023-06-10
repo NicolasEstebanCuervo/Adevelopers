@@ -1,13 +1,60 @@
 import styled from "@emotion/styled";
 import Portada from "../../Imagenes/Portada.jpg";
-import * as Colores from "../Colores"
+import * as Colores from "../Colores";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Contactanos = () => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+  const container = {
+    hidden: { opacity: 0, scale: 0 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2,
+        duration: 2,
+      },
+    },
+  };
+  
+  const item = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 1, 
+        duration: 0.5, 
+      },
+    },
+  };
+  
+  const itemWithDelay = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 2, 
+        duration: 1, 
+      },
+    },
+  };
   return (
-    <SeccionContacto>
-          <TituloContacto>Nuestros servicios</TituloContacto>
-      <SubDivContacto>
-        <ContenedorPrincipal>
+    <SeccionContacto ref={ref}>
+      <TituloContacto>Nuestros servicios</TituloContacto>
+      <SubDivContacto
+        className="container"
+        variants={container}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}
+      >
+        <ContenedorPrincipal className="item" variants={item}>
           <ContenedorTextos>
             <TituloContenedorPrincipal>Contactanos</TituloContenedorPrincipal>
             <ParrafoContenedorPrincipal>
@@ -18,46 +65,57 @@ const Contactanos = () => {
             <BotonContenedorPrincipal>Enviar correo</BotonContenedorPrincipal>
           </ContenedorTextos>
         </ContenedorPrincipal>
-        <ContenedorRedes>
+        <ContenedorRedes        className="container"
+        variants={itemWithDelay}
+        initial="hidden"
+        animate={inView ? "visible" : "hidden"}>  
           <TituloRedes>Redes sociales</TituloRedes>
           <RedesContainer>
             <RedSocial>
-            <a href=""><Icono className="bi bi-facebook"></Icono></a>
+              <a href="">
+                <Icono className="bi bi-facebook"></Icono>
+              </a>
               <ContenedorTextoRed>
                 <TituloRed>Facebook</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                  magni obcaecati aliquam quisquam.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis magni obcaecati aliquam quisquam.
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
             <RedSocial>
-            <a href=""><Icono className="bi bi-instagram"></Icono></a>
+              <a href="">
+                <Icono className="bi bi-instagram"></Icono>
+              </a>
               <ContenedorTextoRed>
                 <TituloRed>Instagram</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                  magni obcaecati aliquam quisquam.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis magni obcaecati aliquam quisquam.
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
             <RedSocial>
-              <a href=""><Icono className="bi bi-twitter"></Icono></a>
+              <a href="">
+                <Icono className="bi bi-twitter"></Icono>
+              </a>
               <ContenedorTextoRed>
                 <TituloRed>Twitter</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                  magni obcaecati aliquam quisquam.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis magni obcaecati aliquam quisquam.
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
             <RedSocial>
-            <a href=""><Icono className="bi bi-linkedin"></Icono></a>
+              <a href="">
+                <Icono className="bi bi-linkedin"></Icono>
+              </a>
               <ContenedorTextoRed>
                 <TituloRed>LinkedIn</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-                  magni obcaecati aliquam quisquam.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Debitis magni obcaecati aliquam quisquam.
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
@@ -72,7 +130,7 @@ export default Contactanos;
 
 const SeccionContacto = styled.section`
   background: ${Colores.colorSecundario};
-  padding: 50px  0 0;
+  padding: 50px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,7 +151,7 @@ const TituloContacto = styled.h1`
   }
 `;
 
-const SubDivContacto = styled.section`
+const SubDivContacto = styled(motion.ul)`
   display: flex;
 
   @media (max-width: 800px) {
@@ -101,7 +159,7 @@ const SubDivContacto = styled.section`
   }
 `;
 
-const ContenedorPrincipal = styled.div`
+const ContenedorPrincipal = styled(motion.li)`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -114,11 +172,10 @@ const ContenedorPrincipal = styled.div`
     ),
     url(${Portada});
   background-size: cover;
-  background-attachment: fixed;
-  position: relative;
+  background-repeat: no-repeat;
 
   @media (max-width: 800px) {
-    height: 40vh; 
+    height: 40vh;
     flex: none;
   }
 `;
@@ -192,10 +249,9 @@ const BotonContenedorPrincipal = styled.button`
   @media (max-width: 400px) {
     font-size: 4vw;
   }
-
 `;
 
-const ContenedorRedes = styled.div`
+const ContenedorRedes = styled(motion.li)`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -206,9 +262,9 @@ const ContenedorRedes = styled.div`
 `;
 
 const TituloRedes = styled.h1`
-  padding-left:50px;
+  padding-left: 50px;
   font-weight: bold;
-  color:${Colores.colorBlanco};
+  color: ${Colores.colorBlanco};
   @media (max-width: 1000px) {
     font-size: 5vw;
   }
@@ -251,7 +307,7 @@ const TituloRed = styled.h1`
   @media (max-width: 400px) {
     font-size: 6vw;
   }
-`
+`;
 
 const ParrafoRed = styled.p`
   font-size: 15px;
@@ -268,12 +324,12 @@ const ParrafoRed = styled.p`
   @media (max-width: 400px) {
     font-size: 5vw;
   }
-`
+`;
 
 const Icono = styled.i`
   font-size: 40px;
   color: ${Colores.colorSemiBlanco};
-  margin-right: 80PX;
+  margin-right: 80px;
 
   @media (max-width: 1000px) {
     font-size: 7vw;
@@ -293,4 +349,3 @@ const Icono = styled.i`
 const ContenedorTextoRed = styled.div`
   color: ${Colores.colorBlanco};
 `;
-
