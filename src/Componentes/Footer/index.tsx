@@ -69,20 +69,20 @@ const ContenedorSecciones = styled.div`
 const ContenedorSeccion = styled.div``;
 
 const TituloSeccionFooter = styled.h1`
-  font-size: 25px;
+  font-size: 17px;
   margin-bottom: 10px;
   color: ${Colores.colorBlanco};
 
   @media (max-width: 1000px) {
-    font-size: 4vw;
+    font-size: 3vw;
   }
 
   @media (max-width: 700px) {
-    font-size: 5vw;
+    font-size: 4vw;
   }
 
   @media (max-width: 400px) {
-    font-size: 6vw;
+    font-size: 5vw;
   }
 `;
 
@@ -100,19 +100,19 @@ const LinkFooter = styled.a`
   margin-bottom: 10px;
   color: ${Colores.colorParrafo};
   text-decoration-line: none;
-  font-size: 17px;
+  font-size: 14px;
   transition: color 0.3s;
 
   @media (max-width: 1000px) {
-    font-size: 2vw;
+    font-size: 1vw;
   }
 
   @media (max-width: 700px) {
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   @media (max-width: 400px) {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 
   &:hover {

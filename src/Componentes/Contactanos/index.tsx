@@ -47,7 +47,7 @@ const Contactanos = () => {
   };
   return (
     <SeccionContacto ref={ref}>
-      <TituloContacto>Nuestros servicios</TituloContacto>
+      <TituloContacto>Contactanos</TituloContacto>
       <SubDivContacto
         className="container"
         variants={container}
@@ -78,8 +78,7 @@ const Contactanos = () => {
               <ContenedorTextoRed>
                 <TituloRed>Facebook</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Debitis magni obcaecati aliquam quisquam.
+                  @Adevelopers
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
@@ -90,8 +89,7 @@ const Contactanos = () => {
               <ContenedorTextoRed>
                 <TituloRed>Instagram</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Debitis magni obcaecati aliquam quisquam.
+                  @Adevelopers
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
@@ -102,8 +100,7 @@ const Contactanos = () => {
               <ContenedorTextoRed>
                 <TituloRed>Twitter</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Debitis magni obcaecati aliquam quisquam.
+                  @Adevelopers  
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
@@ -114,8 +111,7 @@ const Contactanos = () => {
               <ContenedorTextoRed>
                 <TituloRed>LinkedIn</TituloRed>
                 <ParrafoRed>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Debitis magni obcaecati aliquam quisquam.
+                  @Adevelopers
                 </ParrafoRed>
               </ContenedorTextoRed>
             </RedSocial>
@@ -130,7 +126,7 @@ export default Contactanos;
 
 const SeccionContacto = styled.section`
   background: ${Colores.colorSecundario};
-  padding: 50px 0 0;
+  padding: 50px 0 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -281,8 +277,6 @@ const TituloRedes = styled.h1`
 const RedesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 20px;
   padding: 0 10%;
 `;
@@ -329,7 +323,7 @@ const ParrafoRed = styled.p`
 const Icono = styled.i`
   font-size: 40px;
   color: ${Colores.colorSemiBlanco};
-  margin-right: 80px;
+  margin-right: 20px;
 
   @media (max-width: 1000px) {
     font-size: 7vw;
