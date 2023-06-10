@@ -59,7 +59,7 @@ const ContenedorServicios = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 50px 0 100px;
+  padding: 50px 0 10%;
   align-items: center;
   background: ${Colores.colorPrimario};
 `;
@@ -80,8 +80,13 @@ const TituloNuestrosServicios = styled.h1`
 
 const SubContenedorServicios = styled(motion.div)`
   display: flex;
-  height: 430px;
   width: 50%;
+  height: 430px;
+
+  @media (max-width: 1000px) {
+    height: 330px;
+  }
+
 `;
 
 const Imagenes = styled(motion.img)`
@@ -93,9 +98,11 @@ const Imagenes = styled(motion.img)`
   object-fit: cover;
   transition: width 3s ease;
 
+
+
   &:hover {
     cursor: pointer;
-    width: 100%;
+    width: 50%;
     opacity: 0.5;
     filter: contrast(120%);
   }

@@ -68,7 +68,7 @@ const SobreNosotros = () => {
 export default SobreNosotros;
 
 const SectionSobreNosotros = styled.section`
-  padding: 50px 0;
+  padding: 50px 0 10%;
   background: ${Colores.colorPrimario};
   display: flex;
   flex-direction: column;

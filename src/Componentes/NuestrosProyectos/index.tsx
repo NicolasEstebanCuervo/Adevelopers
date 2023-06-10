@@ -90,7 +90,7 @@ export default NuestrosProyectos;
 
 const SeccionProyectos = styled.div`
   background: ${Colores.colorSecundario};
-  padding: 50px 0 100px;
+  padding: 50px 0 10%;
 `;
 
 const TituloProyectos = styled.h1`
