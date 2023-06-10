@@ -86,7 +86,6 @@ const SubContenedorServicios = styled(motion.div)`
   @media (max-width: 1000px) {
     height: 330px;
   }
-
 `;
 
 const Imagenes = styled(motion.img)`

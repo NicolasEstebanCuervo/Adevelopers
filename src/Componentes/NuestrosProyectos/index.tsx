@@ -174,14 +174,18 @@ const TextoHover = styled.h1`
   font-weight: bold;
 
   @media (max-width: 1000px) {
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   @media (max-width: 700px) {
-    font-size: 5vw;
+    font-size: 3vw;
   }
 
   @media (max-width: 450px) {
-    font-size: 7vw;
+    font-size: 4vw;
+  }
+
+  @media (max-width: 350px) {
+    font-size: 6vw;
   }
 `;
