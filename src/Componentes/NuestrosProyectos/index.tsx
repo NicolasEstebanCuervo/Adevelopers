@@ -57,7 +57,7 @@ const NuestrosProyectos = () => {
   };
 
   return (
-    <SeccionProyectos ref={ref}>
+    <SeccionProyectos ref={ref} id="nuestrosProyectos">
     <TituloProyectos>Nuestros servicios</TituloProyectos>
     <ContenedorProyectos
       variants={container}

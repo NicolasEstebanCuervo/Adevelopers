@@ -25,7 +25,7 @@ const NuestrosServicios = () => {
   };
 
   return (
-    <ContenedorServicios ref={ref}>
+    <ContenedorServicios ref={ref} id="nuestroTrabajo">
       <TituloNuestrosServicios>Nuestro trabajo</TituloNuestrosServicios>
       <SubContenedorServicios
         variants={container}

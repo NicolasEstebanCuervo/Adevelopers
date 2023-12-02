@@ -16,7 +16,7 @@ const SobreNosotros = () => {
   };
 
   return (
-    <SectionSobreNosotros ref={ref}>
+    <SectionSobreNosotros ref={ref} id="sobreNosotros">
       <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}

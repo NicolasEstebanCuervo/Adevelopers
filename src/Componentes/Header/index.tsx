@@ -20,11 +20,11 @@ const HeaderComponent = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" css={icon} onClick={handleClick} />
         <Navbar.Collapse id="basic-navbar-nav" css={navbarCollapseStyles} className={`${isOpen ? "show" : "centrar"}`}>
           <Nav>
-            <Nav.Link href="#Sobre mi" css={links}>Inicio</Nav.Link>
-            <Nav.Link href="#Conocimientos" css={links}>Nuestro producto</Nav.Link>
-            <Nav.Link href="#Estudios" css={links}>Nuestros proyectos</Nav.Link>
-            <Nav.Link href="#Mi mejor proyecto" css={links}>Opiniones</Nav.Link>
-            <Nav.Link href="#Contacto" css={links}>Contactanos</Nav.Link>
+            <Nav.Link href="#" css={links}>Inicio</Nav.Link>
+            <Nav.Link href="#sobreNosotros" css={links}>Sobre nosotros</Nav.Link>
+            <Nav.Link href="#nuestrosProyectos" css={links}>Nuestros proyectos</Nav.Link>
+            <Nav.Link href="#nuestroTrabajo" css={links}>Nuestro Trabajo</Nav.Link>
+            <Nav.Link href="#contacto" css={links}>Contactanos</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -76,20 +76,20 @@ const navbarCollapseStyles  = css`
 
 const ImagenLogo  = css`
 
-  width: 150px;
+  width: 180px;
 
   @media (max-width: 992px) {
-    max-width: 100px;
+    max-width: 150px;
     width: 100%;
   }
 
   @media (max-width: 320px) {
-    max-width: 80px;
+    max-width: 130px;
     width: 100%;
   }
 
   @media (max-width: 300px) {
-    font-size: 3vw;
+    font-size: 5vw;
     padding: 0.25rem 0.5rem;
   }
 `

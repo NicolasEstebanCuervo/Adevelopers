@@ -46,7 +46,7 @@ const Contactanos = () => {
     },
   };
   return (
-    <SeccionContacto ref={ref}>
+    <SeccionContacto ref={ref} id="contacto">
       <TituloContacto>Contactanos</TituloContacto>
       <SubDivContacto
         className="container"
